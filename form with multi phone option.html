@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="newfile1.css" rel="stylesheet" type="text/css"/>
+         <link href="normalize.css" rel="stylesheet" type="text/css"/>
+          <link href="call6.css" rel="stylesheet" type="text/css"/>
+         <style>
+            
+            #unError,#fnError,#emailError,#cemailError,#passError,#cpassError{
+			color:red;
+			text-align:center;
+			} 
+            #strongRange{
+                margin: 0 auto;
+                            
+                        }
+             #type{
+                       text-align: center;
+                       color:grey;
+                        }
+              #preview-container {
+    margin: 0px auto;
+    padding: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+	width:50%;
+}
+
+#upload-dialog {
+    padding: 5px;
+    border: 1px solid #336699;
+    background-color: white;
+    color: #336699;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px;
+	width:80%;
+	margin:0px 29px;
+
+}
+
+#image-file {
+    display: none;
+}
+
+#preview-image {
+    display: none;
+    margin:0px 100px;
+    width: 80px;
+    border: 1px solid rgba(0,0,0,0.01);
+    border-radius: 2px;
+}
+
+#image-name {
+    display: none;
+    vertical-align: middle;
+    color: black;
+    background-color: whitesmoke;
+    margin: 0 15px;
+}
+
+#upload-button {
+    padding: 5px;
+    border: 1px solid #336699;
+    background-color: #336699;
+    color: white;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    display: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#cancel-image {
+    display: none;
+    vertical-align: middle;
+    padding: 0px;
+    border: none;
+    color: #777777;
+    background-color: white;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 0 0 0 15px;
+}
+input[type="number"]{
+width: 51%;
+   margin:-20px 0px 2px 90px;
+}
+#addPhone{
+
+
+}
+
+
+
+
+
+   </style>
+    </head>
+    <body>
+        
+        <section class="border">
+           
+       
+           
+		<center><h1>Challenge 6</h1></center>
+		
+		
+		<label for="phone" id="phones">phone
+                <input type="number" name="phone" id="phone" class="phone"  placeholder="phone...">
+				<button type="button" value="Add"  id="addPhone" onclick="javascript:add();"> +</button></input></label>
+               
+               </div>
+                
+               
+               
+                
+                 </section>
+		<script>
+ var reqs_id = 1;
+
+  function removeElement(ev) {
+    var button = ev.target;
+    var field = button.previousSibling;
+    var div = button.parentElement;
+    div.removeChild(button);
+    div.removeChild(field);
+  }
+
+  function add() {
+    reqs_id++; // increment reqs_id to get a unique ID for the new element
+
+    //create textbox
+    var input = document.createElement('input');
+    input.type = "number";
+	input.placeholder="phone"+ reqs_id+"...";
+	input.style.cssText="margin:-20px 0px 2px 134px;"
+   /* input.setAttribute("class", "w3-input w3-border");
+    input.setAttribute('id', 'reqs' + reqs_id);
+    input.setAttribute('value', reqs_id);*/
+    var reqs = document.getElementById("phones");
+    //create remove button
+    var remove = document.createElement('button');
+   // remove.setAttribute('id', 'reqsr' + reqs_id);
+    remove.onclick = function(e) {
+      removeElement(e)
+    };
+    remove.setAttribute("type", "button");
+    remove.innerHTML = "X" ;
+    //append elements
+	var p1=document.getElementById("p1");
+    reqs.insertBefore(input,p1);
+	reqs.insertBefore(remove,p1);
+   // reqs.appendChild(remove);
+  }
+
+</script> 
+
+
+</script>
+    </body>
+</html>
