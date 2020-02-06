@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                width: 40%;
+                margin: 0 auto;
+            }
+            h1{
+                text-align: center;
+            }
+            fieldset{
+                border-radius: 10px;
+                padding: 20px;
+            }
+            fieldset legend{
+                border:solid 1px black;
+                border-radius: 10px;
+                padding: 10px;
+            }
+            fieldset label{
+                display: block;
+                margin-top: 30px;
+            }
+            #sum{
+                margin: 10px;
+                color:blue;
+            }
+           
+
+
+        </style>
+    </head>
+    <body>
+        <h1>Tip percentage</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Tip</legend>
+                <label for="total">Total:
+                <input type="number" name="total" id="total"/></label>
+                <label for="liquid">liquid:
+                <input type="number" name="liquid" id="liquid"/></label>
+                <label for="percentage">percentage:
+                <select  name="percentage" id="percentage" onchange="CalTips.call(this, event)">
+                <option value="0.01">0.00</option>
+                    <option value="0.01">0.01</option>
+                    <option value="0.02">0.02</option>
+                    <option value="0.03">0.03</option>
+                    <option value="0.04">0.04</option>
+                    <option value="0.05">0.05</option>
+                </select></label><br><br>
+                <h3 >The Result=<i id="sum"></i>Tip</h3>
+                
+            </fieldset> 
+        </form>
+  <script>
+         var total=document.getElementById("total");
+         var liquid=document.getElementById("liquid");
+         var prec=document.getElementById("percentage");
+         var re=  document.getElementById("sum");
+
+
+    function CalTips(event) {
+    if(total && total.value && liquid && this.options[this.selectedIndex].text)
+		{
+                    
+                    
+//                    alert(this.options[this.selectedIndex].text);
+                     var sum=(total.value-liquid.value)*this.options[this.selectedIndex].text;
+                     //alert(sum);
+                     re.innerText=sum;
+
+                }
+}
+ 
+		  
+  </script>
+    </body>
+    
+</html>
